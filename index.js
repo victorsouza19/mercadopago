@@ -74,7 +74,13 @@ app.post("/notification", (req, res) => {
       console.log(data);
 
     }).catch(err => {
-      console.log(err);
+      let payment = data.body.results[0];
+
+      if(payment != undefined){
+        console.log(payment);
+      }else{
+        console.log("Payment not found.");
+      }
 
     })
 
