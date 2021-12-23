@@ -49,7 +49,7 @@ app.get("/pay", async (req, res) => {
 
   try {
     let payment = await MercadoPago.preferences.create(data);
-    console.log(payment);
+    // console.log(payment);
 
     //database save data
     
