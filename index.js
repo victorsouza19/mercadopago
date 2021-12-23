@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/pay", async (req, res) => {
-  let id = toString(Date.now());
+  let id = Date.now().toString();
 
   const data = {
     items: [
@@ -46,6 +46,8 @@ app.get("/pay", async (req, res) => {
     },
     external_reference: id
   };   // these fields must be saved on database!
+
+  console.log(data.external_reference );
 
   try {
     let payment = await MercadoPago.preferences.create(data);
