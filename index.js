@@ -71,9 +71,6 @@ app.post("/notification", (req, res) => {
 
     MercadoPago.payment.search({qs: filter})
     .then(data => {
-      console.log(data);
-
-    }).catch(err => {
       let payment = data.body.results[0];
 
       if(payment != undefined){
@@ -81,6 +78,9 @@ app.post("/notification", (req, res) => {
       }else{
         console.log("Payment not found.");
       }
+
+    }).catch(err => {
+     console.log(err);
 
     })
 
