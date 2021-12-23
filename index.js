@@ -25,7 +25,7 @@ MercadoPago.configure({
 
 
 app.get("/", (req, res) => {
-  res.send("Hello world");
+  res.json({hello: "Hello world"});
 });
 
 app.get("/pay", async (req, res) => {
@@ -61,6 +61,6 @@ app.get("/pay", async (req, res) => {
 
 });
 
-app.listen(8080, (req, res) => {
+app.listen(80, (req, res) => {
   console.log("Server running.");
 });
