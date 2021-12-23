@@ -61,6 +61,12 @@ app.get("/pay", async (req, res) => {
 
 });
 
-app.listen(80, (req, res) => {
+app.post("/notification", (req, res) => {
+  console.log(req.query);
+
+  res.status(200);
+})
+
+app.listen(3303, (req, res) => {
   console.log("Server running.");
 });
