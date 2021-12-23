@@ -65,6 +65,7 @@ app.post("/notification", (req, res) => {
   console.log(req.query);
 
   res.status(200);
+  res.send("OK");
 })
 
 const PORT = process.env.PORT || 3303;
